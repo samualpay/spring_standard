@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/my.css" />
+    <title>User</title>
+</head>
+<body>
+<div>
+    <form action="/user" method="post">
+        Name:<br>
+        <input type="text" name="name" value="">
+        <br>
+        age:<br>
+        <input type="number" name="age" value="">
+        <br>
+        <input type="submit" value="送出">
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年齡</th>
+            <th>功能</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${list}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.age}"></td>
+            <td>
+                <form action="/user/delete" method="post">
+                    <input type="hidden" name="id" th:value="${item.id}">
+                    <input type="submit" value="刪除">
+                </form>
+                <form action="/user/modify" method="get">
+                    <input type="hidden" name="id" th:value="${item.id}">
+                    <input type="submit" value="修改">
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

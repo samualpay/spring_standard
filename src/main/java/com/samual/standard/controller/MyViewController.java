@@ -17,4 +17,5 @@ public class MyViewController {
         modelMap.put("age" , age);
         return "greeting";
     }
+
 }

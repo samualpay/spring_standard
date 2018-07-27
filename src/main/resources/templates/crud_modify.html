@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/my.css" />
+    <title>User 修改</title>
+</head>
+<body>
+<div>
+    <form action="/user/modify" method="post">
+        <input type="hidden" name="id" th:value="${item.id}">
+        Name:<br>
+        <input type="text" name="name" th:value="${item.name}">
+        <br>
+        age:<br>
+        <input type="number" name="age" th:value="${item.age}">
+        <br>
+        <input type="submit" value="送出">
+    </form>
+    <form action="/user">
+        <input type="submit" value="取消">
+    </form>
+</div>
+</body>
+</html>

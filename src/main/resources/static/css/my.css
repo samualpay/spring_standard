@@ -1,4 +1,7 @@
 body{
 	font-family: 'Open Sans', sans-serif;
-	background:#FF0;
+	color:#55F;
+}
+table, th, td {
+    border: 1px solid black;
 }

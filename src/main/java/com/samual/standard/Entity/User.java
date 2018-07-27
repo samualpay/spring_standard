@@ -16,8 +16,12 @@ public class User implements Serializable{//序列化在Jpa是必須的
     @Column(nullable = false) //不能為空
     private String name;
     @Column(nullable = true) //可以為空
-    private Long age;
-
+    private Integer age;
+    public User(){} //必須要有預設的constructor 否則會報錯
+    public User(String name,Integer age){
+        this.name = name;
+        this.age = age;
+    }
     public Long getId() {
         return id;
     }
@@ -34,11 +38,11 @@ public class User implements Serializable{//序列化在Jpa是必須的
         this.name = name;
     }
 
-    public Long getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(Long age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 }
